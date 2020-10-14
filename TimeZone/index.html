@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>TimeZone</title>
+</head>
+<body>
+    <script>
+        getData();
+        async function getData() {
+            const inquery = await fetch('./ZonAnn.Ts+dSST.csv');
+            const data = await inquery.text();
+        
+
+        const rows = data.split('\n').slice(1);
+        rows.forEach(elt => {
+            const row = elt.split(',');
+            const year = row[0];
+            const temp = row[1];
+            /*const temp = row[1]; //1.2 Tabular Data Youtube (Coding Train)
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];
+            const temp = row[1];*/
+            console.log(year, temp);
+        })};
+    </script>
+</body>
+</html>
